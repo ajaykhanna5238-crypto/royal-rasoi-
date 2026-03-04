@@ -1,87 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Rasoi by Sanjay</title>
+<title>Royal Rasoi by Sanjay | Premium Kitchenware</title>
+<meta name="description" content="Royal Rasoi by Sanjay – Bright, colorful, premium kitchenware for every home. Steel bartan, pressure cookers, dinner sets. Order online via WhatsApp.">
+<meta name="keywords" content="Royal Rasoi, Premium Kitchenware, Bartan, Steel, Pressure Cooker, Dinner Set, Online Store, Sanjay, Colorful Kitchenware">
+<meta name="author" content="Royal Rasoi by Sanjay">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#f2f2f2;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+body{background:#fff;color:#333;}
 
+/* HEADER */
 header{
-background:black;
-color:gold;
-padding:15px;
-display:flex;
-justify-content:space-between;
-}
+background:linear-gradient(90deg,#ff7e5f,#feb47b);
+color:white;padding:15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;box-shadow:0 5px 10px rgba(0,0,0,0.2);}
+header h1{font-size:24px;animation:fadeIn 1s;}
+.cart-counter{background:white;color:#ff7e5f;padding:5px 10px;border-radius:20px;font-weight:bold;animation:fadeIn 1.2s;}
 
-.section{padding:40px 20px;text-align:center;}
+/* HERO */
+.hero{
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1598514982812-4861f839b3ef');
+background-size:cover;background-position:center;color:white;text-align:center;padding:100px 20px;animation:fadeIn 1.5s;}
+.hero h2{font-size:40px;margin-bottom:15px;}
+.hero p{font-size:20px;}
 
-.products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
+/* PRODUCTS */
+.section{padding:60px 20px;text-align:center;background:linear-gradient(135deg,#fdfbfb,#ebedee);}
+.products{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
+.card{background:white;width:250px;padding:15px;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,0.15);transition:0.5s;animation:fadeIn 1.8s;}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 15px 25px rgba(0,0,0,0.2);}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:12px;}
+.card h3{margin:10px 0;color:#ff7e5f;}
+.price{color:green;font-weight:bold;margin-bottom:8px;}
+button{background:linear-gradient(90deg,#ff7e5f,#feb47b);border:none;padding:10px 15px;cursor:pointer;border-radius:50px;font-weight:bold;transition:0.3s;color:white;}
+button:hover{transform:scale(1.1);box-shadow:0 5px 15px rgba(0,0,0,0.3);}
 
-.card{
-background:white;
-width:250px;
-padding:15px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+/* CART & CHECKOUT */
+.cart-box{background:white;padding:25px;margin:40px auto;max-width:600px;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,0.15);}
+.cart-item{display:flex;justify-content:space-between;margin:8px 0;animation:fadeIn 2s;}
+input, textarea{width:100%;padding:10px;margin:5px 0;border-radius:8px;border:1px solid #ccc;}
 
-.card img{
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:8px;
-}
+/* FOOTER */
+footer{background:#ff7e5f;color:white;text-align:center;padding:20px;margin-top:40px;box-shadow:0 -5px 10px rgba(0,0,0,0.2);}
 
-.price{color:green;font-weight:bold;margin:8px 0;}
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
-button{
-background:gold;
-border:none;
-padding:8px 12px;
-cursor:pointer;
-border-radius:5px;
-font-weight:bold;
-margin-top:5px;
-}
-
-.cart-box{
-background:white;
-padding:20px;
-margin:30px auto;
-max-width:500px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.cart-item{
-display:flex;
-justify-content:space-between;
-margin:5px 0;
-}
-
-input, textarea{
-width:100%;
-padding:8px;
-margin:5px 0;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-footer{
-background:black;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:30px;
+/* MOBILE */
+@media(max-width:768px){
+.hero h2{font-size:30px;}
+.products{flex-direction:column;align-items:center;}
+.card{width:90%;}
 }
 </style>
 </head>
@@ -89,34 +61,68 @@ margin-top:30px;
 <body>
 
 <header>
-<h2>👑 Royal Rasoi by Sanjay</h2>
-<div>Cart: <span id="cart-count">0</span></div>
+<h1>👑 Royal Rasoi by Sanjay</h1>
+<div class="cart-counter">Cart: <span id="cart-count">0</span></div>
 </header>
 
+<section class="hero">
+<h2>Bright, Premium Kitchenware for Every Home</h2>
+<p>Discover colorful, high-quality bartan & dinner sets. Order online in seconds!</p>
+</section>
+
 <section class="section">
-<h2>Products</h2><br>
+<h2>Our Featured Products</h2><br>
 
 <div class="products">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e17b">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e17b" alt="Steel Bartan">
 <h3>Steel Bartan</h3>
 <p class="price">₹499</p>
-<button onclick="addToCart('Steel Bartan',499)">Add</button>
+<div>
+<button onclick="addToCart('Steel Bartan',499,document.getElementById('qty1').value)">Add</button>
+<input type="number" min="1" value="1" id="qty1" style="width:50px;margin-left:5px;">
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1">
+<img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1" alt="Pressure Cooker">
 <h3>Pressure Cooker</h3>
 <p class="price">₹1499</p>
-<button onclick="addToCart('Pressure Cooker',1499)">Add</button>
+<div>
+<button onclick="addToCart('Pressure Cooker',1499,document.getElementById('qty2').value)">Add</button>
+<input type="number" min="1" value="1" id="qty2" style="width:50px;margin-left:5px;">
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1604908554168-7c6f3e9f8e0b">
+<img src="https://images.unsplash.com/photo-1604908554168-7c6f3e9f8e0b" alt="Dinner Set">
 <h3>Dinner Set</h3>
 <p class="price">₹999</p>
-<button onclick="addToCart('Dinner Set',999)">Add</button>
+<div>
+<button onclick="addToCart('Dinner Set',999,document.getElementById('qty3').value)">Add</button>
+<input type="number" min="1" value="1" id="qty3" style="width:50px;margin-left:5px;">
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1612831455543-0e7e7b8d91f2" alt="Non-stick Cookware Set">
+<h3>Non-stick Cookware Set</h3>
+<p class="price">₹1299</p>
+<div>
+<button onclick="addToCart('Non-stick Cookware Set',1299,document.getElementById('qty4').value)">Add</button>
+<input type="number" min="1" value="1" id="qty4" style="width:50px;margin-left:5px;">
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1603052875314-f5b1c1c86e50" alt="Glass Storage Jars">
+<h3>Glass Storage Jars</h3>
+<p class="price">₹699</p>
+<div>
+<button onclick="addToCart('Glass Storage Jars',699,document.getElementById('qty5').value)">Add</button>
+<input type="number" min="1" value="1" id="qty5" style="width:50px;margin-left:5px;">
+</div>
 </div>
 
 </div>
@@ -130,7 +136,7 @@ margin-top:30px;
 <h3>Customer Details</h3>
 <input type="text" id="name" placeholder="Your Name">
 <input type="text" id="phone" placeholder="Phone Number">
-<textarea id="address" placeholder="Full Address"></textarea>
+<textarea id="address" placeholder="Full Address & Notes"></textarea>
 
 <button onclick="clearCart()">Clear Cart</button>
 <button onclick="placeOrder()">Place Order on WhatsApp</button>
@@ -139,17 +145,16 @@ margin-top:30px;
 </section>
 
 <footer>
-© 2026 Royal Rasoi by Sanjay | All Rights Reserved
+© 2026 Royal Rasoi by Sanjay | Premium Kitchenware | All Rights Reserved
 </footer>
 
 <script>
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let total = 0;
 
 function calculateTotal(){
 total = 0;
-cart.forEach(item => total += item.price);
+cart.forEach(item=>total += item.price*item.qty);
 }
 
 function updateCart(){
@@ -161,7 +166,7 @@ itemsDiv.innerHTML = "";
 cart.forEach((item,index)=>{
 itemsDiv.innerHTML += `
 <div class="cart-item">
-${item.name} - ₹${item.price}
+${item.name} x${item.qty} - ₹${item.price*item.qty}
 <button onclick="removeItem(${index})">X</button>
 </div>`;
 });
@@ -170,8 +175,10 @@ document.getElementById("total").innerText = total;
 localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function addToCart(name,price){
-cart.push({name,price});
+function addToCart(name,price,qty=1){
+qty = parseInt(qty);
+if(qty<1) qty=1;
+cart.push({name,price,qty});
 updateCart();
 }
 
@@ -186,40 +193,29 @@ updateCart();
 }
 
 function placeOrder(){
-
 let name = document.getElementById("name").value;
 let phone = document.getElementById("phone").value;
 let address = document.getElementById("address").value;
 
-if(cart.length === 0){
-alert("Cart is empty!");
-return;
-}
+if(cart.length===0){alert("Cart is empty!"); return;}
+if(name==="" || phone==="" || address===""){alert("Please fill all details!"); return;}
 
-if(name==="" || phone==="" || address===""){
-alert("Please fill all details!");
-return;
-}
-
-let message = "New Order:%0A";
-message += "Name: "+name+"%0A";
-message += "Phone: "+phone+"%0A";
-message += "Address: "+address+"%0A%0A";
+let message="🌟 New Order from Royal Rasoi 🌟%0A";
+message+="Name: "+name+"%0A";
+message+="Phone: "+phone+"%0A";
+message+="Address: "+address+"%0A%0A";
 
 cart.forEach(item=>{
-message += item.name + " - ₹" + item.price + "%0A";
+message += item.name + " x"+item.qty + " - ₹" + (item.price*item.qty) + "%0A";
 });
-
 message += "%0ATotal: ₹" + total;
 
 window.open("https://wa.me/918950781163?text="+message,"_blank");
-
 cart=[];
 updateCart();
 }
 
 updateCart();
-
 </script>
 
 </body>
